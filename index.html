@@ -1,14 +1,17 @@
+<!--Origin is ehourweb, not origin (this is for me when I'm pushing a commit)-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="ColorThemeDark">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>HourSync - Coming soon</title>
+        <link rel="stylesheet" href="win.css">
     </head>
     <body>
         <div id="centred">
             <h1>HourSync</h1>
-	    <p>Coming soon...</p>
+            <p>Coming soon...</p>
+            <button onclick="window.open('mailto:npxrc@duck.com?subject=HourSync App/Website&body=Hi, My name is <your name> and I am a big fan. Sincerely, <your name>')">Email Me (npxrc@duck.com)</button>
         </div>
         <style>
             @font-face {
@@ -22,7 +25,7 @@
                 background: linear-gradient(225deg, rgba(51,46,60,1) 0%, rgba(160,170,178,1) 100%);
                 color: white;
                 font-family: 'SF Pro Display';
-		text-align: center;
+		        text-align: center;
             }
             #centred{
                 position: absolute;
@@ -31,5 +34,30 @@
                 transform: translate(-50%, -50%);
             }
         </style>
+        <script>
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                // dark mode, don't change
+            } else{
+                document.documentElement.classList.toggle('ColorThemeLight');
+                document.documentElement.classList.toggle('ColorThemeDark');
+                document.body.classList.toggle('ColorThemeLight');
+                document.body.classList.toggle('ColorThemeDark');
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+                const newColorScheme = event.matches ? "dark" : "light";
+
+                if (newColorScheme == "dark"){
+                    document.documentElement.classList.remove("ColorThemeLight");
+                    document.documentElement.classList.add("ColorThemeDark");
+                    document.body.classList.remove("ColorThemeLight");
+                    document.body.classList.add("ColorThemeDark");
+                } else{
+                    document.documentElement.classList.remove("ColorThemeDark");
+                    document.documentElement.classList.add("ColorThemeLight");
+                    document.body.classList.remove("ColorThemeDark");
+                    document.body.classList.add("ColorThemeLight");
+                }
+            });
+        </script>
     </body>
 </html>

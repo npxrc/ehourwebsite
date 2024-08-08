@@ -1,0 +1,2 @@
+/app/currentupdate /staticfiles/update.json 200
+/app /index.html 301
