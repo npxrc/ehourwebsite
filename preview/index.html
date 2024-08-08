@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" class="ColorThemeDark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HourSync Preview</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="../win.css">
+    </head>
+    <body class="ColorThemeDark">
+        <p id="warningtext">This is not representative of the final product, merely a mockup.</p>
+        <div class="resizable" id="resizableDiv">
+            <div id="topbar">
+                <p class="left" style="float: left;">HourSync - Login Preview</p>
+                <p class="right" style="float: right; cursor: pointer;">- ❐ ✕</p>
+            </div>
+            <div id="main">
+                <div style="display: flex; flex-direction: column; align-items: center; height: 100%; width: 100%;">
+                    <img src="https://academyendorsement.olatheschools.com/images/21century_acad_logo.png" style="max-height: 40%; width: auto;">
+                    <div style="display: flex; justify-content: center; margin-top: 20px;">
+                        <input type="text" id="username" placeholder="District Username" style="margin-right: 10px;">
+                        <input type="password" id="password" placeholder="Password">
+                    </div>
+                    <button style="margin-top: 20px; padding: 10px 20px; font-size: 16px;" onclick="alert('Your free trial has ended. To continue, call 1')">Login</button>
+                </div>
+            </div>
+            <div class="resize-handle" id="resizeHandle"></div>
+        </div>
+        <script>
+            const resizableDiv = document.getElementById('resizableDiv');
+            const resizeHandle = document.getElementById('resizeHandle');
+
+            let isResizing = false;
+
+            resizeHandle.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                isResizing = true;
+                document.addEventListener('mousemove', handleMouseMove);
+                document.addEventListener('mouseup', handleMouseUp);
+            });
+
+            function handleMouseMove(e) {
+                if (!isResizing) return;
+
+                let newWidth = e.clientX - resizableDiv.getBoundingClientRect().left;
+                let newHeight = e.clientY - resizableDiv.getBoundingClientRect().top;
+
+                newHeight<420?newHeight=420:newHeight=newHeight;
+                newHeight>window.innerHeight-50?newHeight=window.innerHeight-50:newHeight=newHeight;
+                newWidth<569?newWidth=569:newWidth=newWidth;
+                newWidth>window.innerWidth-50?newWidth=window.innerWidth-50:newWidth=newWidth;
+
+                resizableDiv.style.width = `${newWidth}px`;
+                resizableDiv.style.height = `${newHeight}px`;
+            }
+
+            function handleMouseUp() {
+                isResizing = false;
+                document.removeEventListener('mousemove', handleMouseMove);
+                document.removeEventListener('mouseup', handleMouseUp);
+            }
+
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                // dark mode, don't change
+            } else{
+                document.documentElement.classList.toggle('ColorThemeLight');
+                document.documentElement.classList.toggle('ColorThemeDark');
+                document.body.classList.toggle('ColorThemeLight');
+                document.body.classList.toggle('ColorThemeDark');
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+                const newColorScheme = event.matches ? "dark" : "light";
+
+                if (newColorScheme == "dark"){
+                    document.documentElement.classList.remove("ColorThemeLight");
+                    document.documentElement.classList.add("ColorThemeDark");
+                    document.body.classList.remove("ColorThemeLight");
+                    document.body.classList.add("ColorThemeDark");
+                } else{
+                    document.documentElement.classList.remove("ColorThemeDark");
+                    document.documentElement.classList.add("ColorThemeLight");
+                    document.body.classList.remove("ColorThemeDark");
+                    document.body.classList.add("ColorThemeLight");
+                }
+            });
+        </script>
+    </body>
+</html>
