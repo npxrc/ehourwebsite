@@ -1,0 +1,30 @@
+body{
+    background: linear-gradient(225deg, rgba(51,46,60,1) 0%, rgba(160,170,178,1) 100%);
+    color: white;
+    font-family: 'SF Pro Display';
+    text-align: center;
+}
+#centred{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tilt-container{
+    scale: 1;
+    transition: scale 300ms ease, box-shadow 250ms ease;
+    box-shadow: rgba(17, 12, 46, 0.6) 0px 10px 100px 0px;
+    width: 79px;
+}
+.tilt-container:hover{
+    scale: 1.2;
+    box-shadow: rgba(17, 12, 46, 1) 0px 30px 70px 0px;
+}
+.tilt-container:active{
+    scale: 1.3;
+    box-shadow: rgb(35, 154, 209) 0px 30px 100px 0px;
+}
+button{
+    cursor: pointer;
+}
