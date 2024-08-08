@@ -160,6 +160,7 @@ function login(){
     
     document.querySelector('#academy').innerHTML=(academies[Math.floor(Math.random()*academies.length)])+" Academy";
     let randomAmtOfReqs = Math.floor(Math.random()*requests.length);
+	randomAmtOfReqs==0?randomAmtOfReqs=2:randomAmtOfReqs=randomAmtOfReqs;
     let stillPending = Math.floor(Math.random()*5);
     shuffle(requests);
     let pendingHours = 0;
@@ -185,5 +186,4 @@ function login(){
     document.querySelector('#homeRequests').appendChild(document.createElement('br'));
     document.querySelector('#homeRequests').appendChild(document.createElement('br'));
     document.querySelector('#homeRequests').appendChild(document.createElement('br'));
-    
 }
