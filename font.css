@@ -5,3 +5,7 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Segoe UI Custom';
+    src: url('segoe.ttf') format('truetype');
+}

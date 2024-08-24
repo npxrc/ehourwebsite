@@ -1,4 +1,5 @@
 document.querySelector('.home').style.display="none"
+document.querySelector('.reqViewer').style.display="none"
 
 const resizableDiv = document.getElementById('resizableDiv');
 const resizeHandle = document.getElementById('resizeHandle');
@@ -187,3 +188,22 @@ function login(){
     document.querySelector('#homeRequests').appendChild(document.createElement('br'));
     document.querySelector('#homeRequests').appendChild(document.createElement('br'));
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const dialog = document.getElementById('contentDialog');
+    const okButton = document.getElementById('okButton');
+
+    // Show the dialog when the page loads
+    dialog.style.display = 'block';
+    dialog.style.opacity=1;
+
+    // Hide the dialog when the OK button is clicked
+    okButton.addEventListener('click', function() {
+        dialog.style.opacity=0;
+        setTimeout(()=>{
+        	dialog.style.display="none"
+        }, 250)
+    });
+});
