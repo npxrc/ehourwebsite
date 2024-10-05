@@ -93,3 +93,4 @@ function download(){
 if (location.pathname !== '/'){
     location.replace('https://hoursync.net/404/')
 }
+//maybe adding a line will update it?
