@@ -81,10 +81,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 function openEmail(){
     let elem = document.createElement('a')
-    elem.href="mailto:npxrc@duck.com?subject=HourSync App/Website&body=Hi, My name is <your name> and I am a big fan. Sincerely, <your name>"
+    elem.href="mailto:neil@hoursync.net?subject=HourSync App/Website&body=Hi, My name is <your name> and I am a big fan. Sincerely, <your name>"
     elem.click();
 }
-function openPreview(){
-    history.pushState({}, "", location.href);
-    location.replace('./preview/')
+function download(){
+    const link = document.createElement('a');
+    link.href = 'https://hoursync.net/download/'
+    link.click();
+}
+
+if (location.pathname !== '/'){
+    location.replace('https://hoursync.net/404/')
 }

@@ -78,12 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-function openEmail(){
-    let elem = document.createElement('a')
-    elem.href="mailto:npxrc@duck.com?subject=HourSync App/Website&body=Hi, My name is <your name> and I am a big fan. Sincerely, <your name>"
-    elem.click();
-}
 function openPreview(){
     history.pushState({}, "", location.href);
-    location.replace('https://ehours.netlify.app/')
+    location.replace('https://hoursync.net/')
 }
