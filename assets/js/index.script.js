@@ -84,11 +84,6 @@ function openEmail(){
     elem.href="mailto:neil@hoursync.net?subject=HourSync App/Website&body=Hi, My name is <your name> and I am a big fan. Sincerely, <your name>"
     elem.click();
 }
-function download(){
-    const link = document.createElement('a');
-    link.href = 'https://olatheschoolsorg-my.sharepoint.com/personal/281nmp31_stu_olatheschools_org/_layouts/15/download.aspx?SourceUrl=%2Fpersonal%2F281nmp31%5Fstu%5Folatheschools%5Forg%2FDocuments%2FHourSync%2Eexe'
-    link.click();
-}
 
 if (location.pathname !== '/'){
     location.replace('https://hoursync.net/404/')
