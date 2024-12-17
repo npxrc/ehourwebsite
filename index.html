@@ -78,5 +78,10 @@
                 <h3 style="cursor: pointer; color: rgb(90,120,200); margin-top: 0;"><a href="download/">Download 🔗</a></h3>
             </div>
         </div>
+        <script>
+            // 404 script because cloudflare is a piece of shit
+            if (location.pathname !== '/' && location.pathname !== '/index.html')
+                location.replace(`/404?og=${location.pathname}`)
+        </script>
     </body>
 </html>
