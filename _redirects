@@ -1,2 +1,0 @@
-# Redirect all paths to /404/ if they don't match an existing file
-/* /404/ 404!
