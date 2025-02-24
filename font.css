@@ -1,11 +1,10 @@
 @font-face {
-    font-family: 'SF Pro Display';
-    src: url('sfpro.woff2') format('woff2'),
-        url('sfpro.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+	font-family: "sfpro";
+	src: url("sfpro.woff2") format("woff2"), url("sfpro.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
 }
 @font-face {
-    font-family: 'Segoe UI Custom';
-    src: url('segoe.ttf') format('truetype');
+	font-family: "Segoe UI Custom";
+	src: url("segoe.ttf") format("truetype");
 }

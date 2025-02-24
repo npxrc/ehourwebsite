@@ -1,0 +1,139 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background-color: rgb(20, 20, 20);
+	color: white;
+	font-family: "sfpro";
+}
+
+/* Hero */
+
+#hero {
+	background-image: url("/assets/bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	padding: 0% 10%;
+	box-sizing: border-box;
+	text-align: center;
+}
+#hero-grad {
+	height: 50vh;
+	width: 100%;
+	background: rgb(2, 0, 36);
+	background: linear-gradient(
+		0deg,
+		rgba(20, 20, 20, 0.9) 0%,
+		rgba(0, 0, 0, 0) 100%
+	);
+	position: absolute;
+	top: 50vh;
+	left: 0;
+	display: block;
+	z-index: 2;
+}
+#hero-grad > :nth-child(1) {
+	animation: hero-scale 500ms ease-in-out forwards,
+		unblur 750ms ease-in-out forwards;
+}
+#hero .h1-container {
+	height: 50vh;
+	width: 100%;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: end;
+	justify-content: center;
+}
+#hero h1 {
+	position: relative;
+	bottom: 0;
+	font-size: 10vh;
+	margin: 0;
+	animation: hero-scale 500ms ease-in-out forwards,
+		unblur 750ms ease-in-out forwards, moveBg 5s ease-in-out infinite;
+
+	background: linear-gradient(94deg, #0090f7, #ba62fc);
+	background-size: auto;
+	background-clip: border-box;
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	display: inline-block;
+}
+@media (max-width: 550px) {
+	#hero h1 {
+		font-size: 8vh;
+	}
+}
+@keyframes unblur {
+	0% {
+		filter: blur(20px);
+		pointer-events: none;
+	}
+	100% {
+		filter: none;
+		pointer-events: all;
+	}
+}
+@keyframes hero-scale {
+	0% {
+		scale: 0;
+	}
+	100% {
+		scale: 1;
+	}
+}
+
+button {
+	background-color: transparent;
+	padding: 7px;
+	border: 1px white solid;
+	border-radius: 5px;
+	color: white;
+	margin: 5px;
+	cursor: pointer;
+	transition: all 250ms ease;
+}
+button.primary {
+	background-color: white;
+	color: black;
+}
+button:hover {
+	scale: 1.1;
+}
+button:active {
+	scale: 0.9;
+}
+
+/* Features */
+#features {
+	background-image: url("/assets/bg-features.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	width: 100%;
+	padding: 10%;
+	box-sizing: border-box;
+}
+#features-grad {
+	height: 50vh;
+	width: 100%;
+	background: rgb(2, 0, 36);
+	background: linear-gradient(
+		0deg,
+		rgba(0, 0, 0, 0) 0%,
+		rgba(20, 20, 20, 0.9) 100%
+	);
+	position: absolute;
+	top: 100vh;
+	left: 0;
+	display: block;
+	z-index: 2;
+}
+/* Testimonials (maybe?) */
+#testimonials {
+}
