@@ -31,7 +31,6 @@ body {
 	position: absolute;
 	top: 50vh;
 	left: 0;
-	display: block;
 	z-index: 2;
 }
 #hero-grad > :nth-child(1) {
