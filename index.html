@@ -35,10 +35,17 @@
 					<p>A modern way to submit eHours</p>
 					<span>
 						<button
-							class="primary"
+							class="primary download"
 							onclick="window.open('https://hoursync.net/download/')"
 						>
 							Download
+						</button>
+						<button
+							class="primary geturl"
+							onclick="showURL()"
+							hidden
+						>
+							Get URL
 						</button>
 						<button
 							class="secondary"
@@ -46,6 +53,88 @@
 						>
 							View on GitHub
 						</button>
+						<script>
+							let isMobile = false;
+							window.addEventListener("resize", resizeCheck);
+							window.addEventListener(
+								"DOMContentLoaded",
+								resizeCheck
+							);
+
+							function resizeCheck() {
+								if (window.innerWidth < 550) {
+									if (isMobile) return;
+									isMobile = true;
+									document
+										.querySelector(".geturl")
+										.attributes.removeNamedItem("hidden");
+									document
+										.querySelector(".download")
+										.setAttribute("hidden", "");
+								} else {
+									if (!isMobile) return;
+									isMobile = false;
+									document
+										.querySelector(".geturl")
+										.setAttribute("hidden", "");
+									document
+										.querySelector(".download")
+										.attributes.removeNamedItem("hidden");
+								}
+							}
+							function showURL() {
+								let div = create("div");
+								let cont = create("div");
+								let h1 = create("h1");
+								let p = create("p");
+								let button = create("button");
+
+								div.classList.add("modal");
+								cont.classList.add("container");
+								h1.innerHTML = "www.t.ly/99mRK";
+								p.innerHTML =
+									"Navigate to this URL on your district-issued device to continue with the installation of HourSync!";
+
+								button.addEventListener("click", closeModal);
+								button.innerHTML = "Okay";
+
+								cont.append(h1);
+								cont.append(p);
+								cont.append(button);
+								div.append(cont);
+
+								document.body.append(div);
+
+								// Trigger the transition
+								setTimeout(() => {
+									blur.style.opacity = "1"; // Fade-in the blur with opacity
+									blur.style.backdropFilter = "blur(0px)"; // Remove the blur smoothly
+								}, 0);
+							}
+
+							function closeModal() {
+								let modal = document.querySelector(".modal");
+
+								modal.classList.add("closing");
+								modal.animate(
+									{
+										opacity: 0,
+									},
+									{
+										duration: 250,
+										easing: "ease",
+										fill: "forwards",
+									}
+								);
+								setTimeout(() => {
+									modal.remove();
+								}, 250);
+							}
+
+							function create(e) {
+								return document.createElement(e);
+							}
+						</script>
 					</span>
 				</div>
 			</div>
@@ -54,5 +143,15 @@
 			<div id="features-grad"></div>
 		</div>
 		<div id="testimonials"></div> -->
+
+		<script>
+			let url = location.pathname;
+
+			console.log(url);
+
+			if (url !== "/" && url !== "/index.html") {
+				location.replace(`/404?url=${url}`);
+			}
+		</script>
 	</body>
 </html>
