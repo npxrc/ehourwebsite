@@ -122,6 +122,10 @@ button:active {
 	padding: 10%;
 	box-sizing: border-box;
 }
+#features .content{
+	position: absolute;
+	z-index: 4;
+}
 #features-grad {
 	height: 50vh;
 	width: 100%;
