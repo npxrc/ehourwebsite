@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<script>
+			let url = location.pathname;
+
+			console.log(url);
+
+			if (url !== "/" && url !== "/index.html") {
+				location.replace(`/404?url=${url}`);
+			}
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>HourSync</title>
@@ -8,17 +17,17 @@
 		<link rel="stylesheet" href="font.css" />
 		<link rel="stylesheet" href="style.css" />
 
-		<meta name="author" content="Neil Patrao" />
+		<meta name="author" content="von Neil Patrao" />
 		<meta name="title" content="HourSync" />
 		<meta
 			name="description"
-			content="A modern way to submit eHours. Built for your future."
+			content="Ein neuer Weg, man kann eHours einzureichen. Gebaut für deine Zukunft."
 		/>
 
 		<meta property="og:title" content="HourSync" />
 		<meta
 			property="og:description"
-			content="A modern way to submit eHours. Built for your future."
+			content="Ein neuer Weg, man kann eHours einzureichen. Gebaut für deine Zukunft."
 		/>
 		<meta
 			property="og:image"
@@ -32,7 +41,7 @@
 			</div>
 			<div id="hero-grad">
 				<div class="content">
-					<p>A modern way to submit eHours</p>
+					<p>Ein neuer Weg, man kann eHours einzureichen</p>
 					<span>
 						<button
 							class="primary download"
@@ -45,13 +54,13 @@
 							onclick="showURL()"
 							hidden
 						>
-							Get URL
+							URL öffnen
 						</button>
 						<button
 							class="secondary"
 							onclick="window.open('https://github.com/npxrc/HourSync')"
 						>
-							View on GitHub
+							Sehen auf GitHub an
 						</button>
 						<script>
 							let isMobile = false;
@@ -93,7 +102,7 @@
 								cont.classList.add("container");
 								h1.innerHTML = "www.t.ly/99mRK";
 								p.innerHTML =
-									"Navigate to this URL on your district-issued device to continue with the installation of HourSync!";
+									"Bitte kopieren Sie dieses und öffnen Sie die URL auf Ihrem Laptop.";
 
 								button.addEventListener("click", closeModal);
 								button.innerHTML = "Okay";
@@ -143,15 +152,5 @@
 			<div id="features-grad"></div>
 		</div>
 		<div id="testimonials"></div> -->
-
-		<script>
-			let url = location.pathname;
-
-			console.log(url);
-
-			if (url !== "/" && url !== "/index.html") {
-				location.replace(`/404?url=${url}`);
-			}
-		</script>
 	</body>
 </html>
